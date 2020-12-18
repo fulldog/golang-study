@@ -9,6 +9,7 @@ import (
 func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/test", controller.Index)
+	mux.HandleFunc("/send", controller.Send)
 	serve := &http.Server{
 		Addr:              ":8888",
 		Handler:           mux,
