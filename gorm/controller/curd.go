@@ -1,9 +1,13 @@
 package controller
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gin-gonic/gin"
+	"gorm/model"
+)
 
 func Create(g *gin.Context) {
-	g.JSONP(200, gin.H{"message": "ok"})
+	t := new(model.Test)
+	g.JSONP(200, gin.H{"message": t.Create()})
 }
 
 func Del(g *gin.Context) {
